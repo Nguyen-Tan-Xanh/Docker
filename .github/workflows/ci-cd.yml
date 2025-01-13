@@ -19,19 +19,6 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: '7.0' # Thay thế bằng phiên bản .NET của bạn
-
-    # Restore dependencies
-    - name: Restore dependencies
-      run: dotnet restore
-
-    # Build the application
-    - name: Build the application
-      run: dotnet build --configuration Release
-
-    # Publish the application
-    - name: Publish the application
-      run: dotnet publish -c Release -o ./publish
-
     # Build and push Docker image
     - name: Log in to Docker Hub
       uses: docker/login-action@v2
